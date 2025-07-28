@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://csym6v3hm0goa"]
+
+[ext_resource type="Script" uid="uid://bkdxgagkvst8d" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://bcjs5c7vste53" path="res://assets/texture_13.png" id="2_g2els"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qhqgy"]
+radial_segments = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqkch"]
+emission_enabled = true
+emission = Color(1, 0.921569, 0, 1)
+emission_texture = ExtResource("2_g2els")
+uv1_triplanar = true
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_u8vuu")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_qhqgy")
+material = SubResource("StandardMaterial3D_dqkch")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c01ocfdegqs31"]
+
+[ext_resource type="PackedScene" uid="uid://3rea5ta1v4li" path="res://scenes/maze.tscn" id="1_im37l"]
+
+[node name="test_room" type="Node3D"]
+
+[node name="maze" parent="." instance=ExtResource("1_im37l")]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]

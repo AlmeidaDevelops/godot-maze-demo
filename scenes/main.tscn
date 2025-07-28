@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwwt3hv588qyu"]
+
+[ext_resource type="Script" uid="uid://bw5m2gnwd4umc" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://3rea5ta1v4li" path="res://scenes/maze.tscn" id="2_o6xl0"]
+[ext_resource type="Script" uid="uid://d14sirq7mabt7" path="res://scripts/control.gd" id="3_sugp2"]
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_o5qli")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+
+[node name="maze" parent="." instance=ExtResource("2_o6xl0")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_sugp2")
+
+[node name="level" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Level X"
+
+[node name="collectables" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 40.0
+offset_bottom = 46.0
+text = "X / X"
+
+[node name="controls" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 500.0
+offset_right = 287.0
+offset_bottom = 549.0
+text = "Move with W A S D
+Look with <- -> (left, right arrow keys)"
+
+[node name="end" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_top = 46.0
+offset_right = 40.0
+offset_bottom = 69.0
+text = "You Win 🎉"

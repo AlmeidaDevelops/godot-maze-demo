@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlqcdj3x4f2l6"]
+
+[ext_resource type="Texture2D" uid="uid://bcjs5c7vste53" path="res://assets/texture_13.png" id="1_rrhsg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8xon"]
+emission_enabled = true
+emission_texture = ExtResource("1_rrhsg")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+use_collision = true
+size = Vector3(1, 3, 1)
+material = SubResource("StandardMaterial3D_b8xon")

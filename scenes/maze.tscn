@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://3rea5ta1v4li"]
+
+[ext_resource type="Script" uid="uid://dnv0ybmfnd5fq" path="res://scripts/maze.gd" id="1_ol5qi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgl6e"]
+emission_enabled = true
+emission = Color(0, 1, 0.862745, 1)
+
+[node name="maze" type="Node3D"]
+script = ExtResource("1_ol5qi")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, 0, 0)
+flip_faces = true
+material = SubResource("StandardMaterial3D_fgl6e")
